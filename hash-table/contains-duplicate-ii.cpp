@@ -1,11 +1,11 @@
 class Solution {
 public:
-    bool containsNearbyDuplicate(vector<int>& arr, int k) {
+    bool containsNearbyDuplicate(vector<int>& nums, int k) {
         unordered_map<int,int>mp;
         
-        int n  = arr.size();
+        int n  = nums.size();
         for(int i = 0;i<n;i++){
-            if(mp.find[nums[i]]!= mp.end()){
+            if(mp.find(nums[i])!= mp.end()){
                 if(i - mp[nums[i]]<=k){
                     return true;
                 }
