@@ -1,7 +1,6 @@
 class Solution {
-  public:
-    vector<int> findMajority(vector<int>& v) {
-        // Code here
+public:
+    vector<int> majorityElement(vector<int>& v) {
         int n  = v.size();
         int el1 = 0,el2 = 0;
         int cnt1 = 0;
@@ -23,7 +22,7 @@ class Solution {
                 cnt2=1;
             }
             else{
-                cnt1;
+                cnt1--;
                 cnt2--;
             }
         }
@@ -32,10 +31,14 @@ class Solution {
             if(el1 == v[i]){
                 cnt1++;
             }
-            else if(v[i]==el2)cnt2++;
+            else if(v[i]==el2){
+                cnt2++;
+            }
         }
         vector<int>ans;
         if(cnt1>n/3)ans.push_back(el1);
         if(cnt2>n/3)ans.push_back(el2);
+
+        return ans;
     }
 };
