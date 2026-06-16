@@ -15,7 +15,8 @@ public:
             }
         }
 
-        int subarray = mx - mn;
-        return subarray * k;
+        long long subarray = mx - mn;
+        long long result = subarray * k;
+        return  result;
     }
 };
