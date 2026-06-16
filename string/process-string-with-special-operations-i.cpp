@@ -8,7 +8,10 @@ public:
                 result.push_back(s[i]);
             }
             else if(s[i]=='*'){
-                result.pop_back();
+                if(!result.empty()) {
+            result.pop_back();
+               
+            }
             }
             else if(s[i]=='#'){
                   result += result;
