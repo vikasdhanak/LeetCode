@@ -1,22 +1,14 @@
 class Solution {
 public:
     long long maxTotalValue(vector<int>& arr, int k) {
-        int n = arr.size();
-
-        int mx = arr[0];
-        int mn = arr[0];
-
-        for (int i = 1; i < n; i++) {
-            if (arr[i] > mx) {
-                mx = arr[i];
-            }
-            if (arr[i] < mn) {
-                mn = arr[i];
-            }
-        }
-
-        long long subarray = mx - mn;
-        long long result = subarray * k;
-        return  result;
+         int mx = INT_MIN;
+         int mn = INT_MAX;
+         for(int i = 0;i<arr.size();i++){
+            if(arr[i]>mx) mx = arr[i];
+            if(arr[i]<mn) mn = arr[i];
+         }
+        int  ans = mx-mn;
+        long long result = ans*k;
+        return result;
     }
 };
