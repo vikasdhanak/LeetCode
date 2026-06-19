@@ -7,7 +7,7 @@ public:
             if(arr[i]>mx) mx = arr[i];
             if(arr[i]<mn) mn = arr[i];
          }
-        int  ans = mx-mn;
+        long long ans = mx-mn;
         long long result = ans*k;
         return result;
     }
