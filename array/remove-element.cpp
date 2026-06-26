@@ -1,13 +1,31 @@
  class Solution {
 public:
     int removeElement(vector<int>& nums, int val) {
-        int index = 0; // position to insert valid elements
-        for (int i = 0; i < nums.size(); i++) {
-            if (nums[i] != val) {
-                nums[index] = nums[i];
-                index++;
+        int n = nums.size();
+        int start = 0;
+        int end = n - 1;
+
+        while (start <= end) {
+            if (nums[end] == val) {
+                end--;
+            }
+            else if (nums[start] == val) {
+                swap(nums[start], nums[end]);
+                end--;
+            }
+            else {
+                start++;
             }
         }
-        return index;
+
+        int count = 0;
+        for (int i = 0; i < nums.size(); i++) {
+            if (nums[i] == val) {
+                count++;
+            }
+        }
+
+        int ans = nums.size() - count;
+        return ans;   // return only the count
     }
 };
