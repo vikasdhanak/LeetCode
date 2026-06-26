@@ -19,6 +19,13 @@ public:
         }
 
         int pos = x/2 + 1;
+        if(pos==1){
+            ListNode* temp1 = head;
+            head = head->next;
+            delete temp1;
+
+            return head;
+        }
         pos--;
         ListNode* prev = NULL;
         ListNode* curr = head;
