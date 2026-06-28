@@ -9,7 +9,7 @@ public:
             if(i==0){
                 arr[i] = 1;
             }
-            else if((arr[i] - arr[i-1])>=1){
+            else if(abs(arr[i] - arr[i-1])>=1){
                 arr[i] = arr[i-1]+1;
                 maximum = max(maximum , arr[i]);
             }
