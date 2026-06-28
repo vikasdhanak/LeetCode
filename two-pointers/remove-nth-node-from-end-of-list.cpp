@@ -14,9 +14,7 @@ public:
         if (head == NULL )
             return NULL;
         
-        if(head->next == NULL){
-            return head->next;
-        }
+       
 
         int count = 0;
         ListNode* temp = head;
@@ -24,10 +22,21 @@ public:
             count++;
             temp = temp->next;
         }
+
+        if(count==n){
+            head = head->next;
+            return head;
+         }
+
+
      
         count-=n;
+
+                
         ListNode* curr = head;
         ListNode* prev = NULL;
+
+          
         while (count--) {
             prev = curr;
             curr = curr->next;
