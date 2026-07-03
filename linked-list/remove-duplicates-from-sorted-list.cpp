@@ -15,17 +15,19 @@ public:
         if(head==NULL)return NULL;
         if(head->next==NULL)return head;
         ListNode* curr = head;
-        ListNode* prev = NULL;
-
-        while (curr!=NULL & curr->next!=NULL) {
-            prev = curr;
-            curr = curr->next;
-
-            if (prev->val == curr->val) {
-                prev->next = curr->next;
+         
+            while(curr && curr->next){
+                if(curr->val == curr->next->val){
+                    curr->next = curr->next->next;
+                }
+                else{
+                    curr = curr->next;
+                }
             }
-            
-        }
         return head;
+
+            
+        
+        
     }
 };
