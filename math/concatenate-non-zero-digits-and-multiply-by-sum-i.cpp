@@ -21,7 +21,7 @@ public:
             num = num / 10;
         }
 
-        long long final = ans * sum;
+        long long final = 1LL* ans * sum;
         return final;
     }
 };
