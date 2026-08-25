@@ -10,7 +10,9 @@ public:
             digitSum += digit;
             digitProduct *= digit;
             n /= 10;
-    float divisor = digitSum + digitProduct;
+        }
+
+        int divisor = digitSum + digitProduct;
         return original % divisor == 0;
     }
 };
