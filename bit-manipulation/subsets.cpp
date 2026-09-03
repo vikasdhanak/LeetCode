@@ -1,21 +1,29 @@
- class Solution {
-private:
-    void findsubset(int ind, vector<int> &nums, vector<int> &ds, vector<vector<int>> &ans) {
-        ans.push_back(ds);
+class Solution {
+public:
 
-        for(int i = ind; i < nums.size(); i++) {
-            ds.push_back(nums[i]);
-            findsubset(i + 1, nums, ds, ans);
-            ds.pop_back();
-        }
+
+void subset(vector<int> nums , int index , int n , vector<vector<int > >&ans , vector<int>temp){
+    // base case 
+    if(index == n){
+        ans.push_back(temp);
+        return;
     }
 
-public:
-    vector<vector<int>> subsets(vector<int>& nums) {
-        vector<vector<int>> ans;
-        vector<int> ds;
+    // dont take 
+    subset(nums,index+1 , n , ans , temp);
 
-        findsubset(0, nums, ds, ans);
+    // take
+    temp.push_back(nums[index]);
+    subset(nums,index+1 , n , ans , temp);
+
+    
+
+}
+    vector<vector<int>> subsets(vector<int>& nums) {
+        vector<vector<int>>ans;
+        vector<int>temp;
+        subset(nums ,0,nums.size(),ans,temp);
+
         return ans;
     }
 };
